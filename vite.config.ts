@@ -8,6 +8,22 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+
+    /* Paths alias*/
+    alias: {
+      '@': resolve(__dirname, './src'),
+      '@components': resolve(__dirname, './src/components'),
+      '@ui': resolve(__dirname, './src/components/ui'),
+      '@module': resolve(__dirname, './src/components/module'),
+      '@layout': resolve(__dirname, './src/components/layout'),
+      '@utils': resolve(__dirname, './src/utils'),
+      '@lib': resolve(__dirname, './src/lib'),
+      '@hooks': resolve(__dirname, './src/hooks'),
+      '@type': resolve(__dirname, './src/types'),
+      '@config': resolve(__dirname, './src/config'),
+    },
+  },
   build: {
     lib: {
       entry: resolve(__dirname, 'lib/index.ts'),
